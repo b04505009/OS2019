@@ -20,7 +20,7 @@ Scheduler要做的事情本身還算單純
 
 透過不同的scheduling algorithm 我們可以判斷該 preempt 與否
 
-而不同的scheduling algorithm 又有自己的比較方法
+而不同的 scheduling algorithm 又有自己的比較方法
 
 我們透過 `next_process` 這支函式來分辨不同的Scheduling Algorithm接著會呼叫哪支Process
 
@@ -61,7 +61,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 但一來覺得能不動kernel盡量不要動 另一方面則是覺得 可能還有更直覺的做法
 
-因此 透過研究我們發現`linux/kernel.h` 中的printk正是對 `/dev/kmsg` 進行寫入的動作
+因此 透過研究我們發現 `linux/kernel.h` 中的printk正是對 `/dev/kmsg` 進行寫入的動作
 
 所以其實 我們寫入 `/dev/kmsg` 跟實作printk是有異曲同工之妙 
 
@@ -71,15 +71,15 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 ## Result
 
-![image-20190501040338661](/Users/liuxizhen/OS2019/res/image-20190501040338661.png)
+![image-20190501040338661](res/image-20190501040338661.png)
 
 用十個process平均的結果，平均的單位時間為0.0019799022452毫秒
 
 - FIFO_5
 
-  - ![image-20190501041731670](/Users/liuxizhen/OS2019/res/image-20190501041731670.png)
+  - ![image-20190501041731670](res/image-20190501041731670.png)
 
-  - ![image-20190501041757247](/Users/liuxizhen/OS2019/res/image-20190501041757247.png)
+  - ![image-20190501041757247](res/image-20190501041757247.png)
 
   - [47611.286481] [project1] 8191 1556655279.385567005 1556655294.674265286
 
@@ -97,9 +97,9 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 - PSJF_5.txt
 
-  - ![image-20190501042118371](/Users/liuxizhen/OS2019/res/image-20190501042118371.png)
+  - ![image-20190501042118371](res/image-20190501042118371.png)
 
-  - ![image-20190501042048133](/Users/liuxizhen/OS2019/res/image-20190501042048133.png)
+  - ![image-20190501042048133](res/image-20190501042048133.png)
 
   - [47905.739285] [project1] 9254 1556655588.950573115 1556655589.145166274
 
@@ -113,9 +113,9 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 - SJF_5.txt
 
-  - ![image-20190501042307928](/Users/liuxizhen/OS2019/res/image-20190501042307928.png)
+  - ![image-20190501042307928](res/image-20190501042307928.png)
 
-  - ![image-20190501042254957](/Users/liuxizhen/OS2019/res/image-20190501042254957.png)
+  - ![image-20190501042254957](res/image-20190501042254957.png)
 
   - [48043.280998] [project1] 9697 1556655721.882408284 1556655726.690902163
 
@@ -127,9 +127,9 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 - RR_5.txt
 
-  - ![image-20190501042622895](/Users/liuxizhen/OS2019/res/image-20190501042622895.png)
+  - ![image-20190501042622895](res/image-20190501042622895.png)
 
-  - ![image-20190501042556339](/Users/liuxizhen/OS2019/res/image-20190501042556339.png)
+  - ![image-20190501042556339](res/image-20190501042556339.png)
 
   - [48164.212038] [project1] 10069 1556655830.264926553 1556655847.623447944
 
@@ -150,7 +150,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 ## Comparison
 
 - FIFO_5
-  - ![image-20190501043407436](/Users/liuxizhen/OS2019/res/image-20190501043407436.png)
+  - ![image-20190501043407436](res/image-20190501043407436.png)
   - P1 ready at time 0.
     P2 ready at time 200.
     P3 ready at time 200.
@@ -166,7 +166,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
     P6 finish at time 19000.
     P7 finish at time 23000.
 - PSJF_5
-  - ![image-20190501043706718](/Users/liuxizhen/OS2019/res/image-20190501043706718.png)
+  - ![image-20190501043706718](res/image-20190501043706718.png)
   - P1 ready at time 100.
     P2 ready at time 100.
     P1 finish at time 200.
@@ -178,7 +178,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
     P4 finish at time 8400.
     P5 finish at time 15400.
 - SJF_5
-  - ![image-20190501043827340](/Users/liuxizhen/OS2019/res/image-20190501043827340.png)
+  - ![image-20190501043827340](res/image-20190501043827340.png)
   - P1 ready at time 0.
     P2 ready at time 500.
     P3 ready at time 1000.
@@ -188,7 +188,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
     P3 finish at time 3000.
     P4 finish at time 3500.
 - RR_5
-  - ![image-20190501044110321](/Users/liuxizhen/OS2019/res/image-20190501044110321.png)
+  - ![image-20190501044110321](res/image-20190501044110321.png)
   - P1 ready at time 0.
     P2 ready at time 200.
     P3 ready at time 200.
