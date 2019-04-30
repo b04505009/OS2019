@@ -5,19 +5,19 @@
 
 #define CHILD_CPU 1
 #define PARENT_CPU 0
+#define LOOPS_PER_UNIT 1000000UL
 
 /* Running one unit time */
 #define UNIT_T()				\
 {						\
 	volatile unsigned long i;		\
-	for (i = 0; i < 1000000UL; i++);	\
+	for (i = 0; i < LOOPS_PER_UNIT; i++);	\
 }						\
 
 struct process {
 	char name[32];
 	int t_ready;
 	int t_exec;
-	int t_remain;
 	pid_t pid;
 };
 
