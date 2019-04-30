@@ -27,7 +27,7 @@ Scheduler要做的事情本身還算單純
 而Scheduler每個cycle做的事情便是
 
 1. 確定目前狀態 (是否running process仍要執行, 是否仍有process需要被執行)
-2. 選取下一個要執行的Process
+2. 根據Scheduling Algorithm選取下一個要執行的Process
 3. 執行一個 `UNIT_T()`
 4. 重新對Process做排序
 
@@ -61,7 +61,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 但一來覺得能不動kernel盡量不要動 另一方面則是覺得 可能還有更直覺的做法
 
-因此 透過研究我們發現`linux/kernel.h` 中的printk正是對 `/dev/kmsg` 進行寫入的動作
+因此 透過研究我們發現 `linux/kernel.h` 中的printk正是對 `/dev/kmsg` 進行寫入的動作
 
 所以其實 我們寫入 `/dev/kmsg` 跟實作printk是有異曲同工之妙 
 
@@ -80,8 +80,8 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 ## Contribution
 
 - B04505021 黃廉弼: 組織架構 檢查程式執行 撰寫報告
-- B04505009 劉錫臻: 撰寫Main Function程式碼
+- B04505009 劉錫臻: 撰寫Scheduler部分程式碼 測試程式
 - B04505019 唐國霖: 撰寫Process部分程式碼
 - B04505024 李昊聰: 協調檔案介面 整理註解
-- B04505041 黃博鈞: 撰寫Scheduler部分程式碼
+- B04505041 黃博鈞: 撰寫Main Function程式碼
 
