@@ -12,7 +12,7 @@ Main, Process, Scheduler等部分
 
 再實際呼叫Process模擬程序運作
 
-<img src="proj1/architecture.png" height='300px'/>
+<img src="res/architecture.png" height='300px'/>
 
 ### Scheduler
 
