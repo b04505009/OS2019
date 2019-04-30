@@ -8,6 +8,10 @@
 #include <sys/time.h>
 #include "process.h"
 
+#include <linux/kernel.h>
+
+#define KERN_INFO "<6>"
+#define PRINTK 315
 
 // Set process afinity to cpu
 int proc_assign_cpu(int pid, int core){
@@ -45,7 +49,7 @@ int proc_exec(struct process proc){
     } 
     else if (pid == 0){
         clock_gettime(CLOCK_REALTIME, &start_time); // get cpu time when process start
-        char to_dmesg[400];
+        char to_dmesg[200];
         for (int i = 0; i < proc.t_exec; i++) {
 			UNIT_T();
 #ifdef DEBUG
@@ -55,7 +59,9 @@ int proc_exec(struct process proc){
 		}
         clock_gettime(CLOCK_REALTIME, &end_time); // get cpu time when process end
         sprintf(to_dmesg, "echo \"[project1] %d %lu.%09lu %lu.%09lu\n\" > /dev/kmsg", getpid(), start_time.tv_sec, start_time.tv_nsec, end_time.tv_sec, end_time.tv_nsec);
+        //sprintf(to_dmesg, "[project1] %d %lu.%09lu %lu.%09lu\n", getpid(), start_time.tv_sec, start_time.tv_nsec, end_time.tv_sec, end_time.tv_nsec);
         system(to_dmesg); // print string to_dmesg dmesg
+        //printk(KERN_INFO "[project1] %d %lu.%09lu %lu.%09lu\n", getpid(), start_time.tv_sec, start_time.tv_nsec, end_time.tv_sec, end_time.tv_nsec);
         exit(0);
     }
     proc_assign_cpu(pid, CHILD_CPU);
