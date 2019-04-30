@@ -22,9 +22,22 @@ static int running;
 static int finish_cnt;
 
 /* Sort processes by ready time */
-int cmp(const void *a, const void *b) {
-	return ((struct process *)a)->t_ready - ((struct process *)b)->t_ready;
+int cmp_proc_fcfs(const void* a, const void* b) {
+    // sort ready time in increasing order
+    if (((struct process*)a)->t_ready != ((struct process*)b)->t_ready)
+        return ((struct process*)a)->t_ready - ((struct process*)b)->t_ready;
+    else
+        return strcmp(((struct process*)a)->name, ((struct process*)b)->name);
 }
+/* Sort processes by remain time */
+int cmp_proc_sjf(const void* a, const void* b) {
+    // sort ready time in increasing order
+    if (((struct process*)a)->t_exec != ((struct process*)b)->t_exec)
+        return ((struct process*)a)->t_exec - ((struct process*)b)->t_exec;
+    else
+        return strcmp(((struct process*)a)->name, ((struct process*)b)->name);
+}
+
 
 /* Return index of next process  */
 int next_process(struct process *proc, int nproc, int policy)
@@ -86,7 +99,7 @@ int next_process(struct process *proc, int nproc, int policy)
 
 int scheduling(struct process *proc, int nproc, int policy)
 {
-	qsort(proc, nproc, sizeof(struct process), cmp);
+	qsort(proc, nproc, sizeof(struct process), cmp_proc_fcfs);
 
 	/* Initial pid = -1 imply not ready */
 	for (int i = 0; i < nproc; i++)
