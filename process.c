@@ -26,12 +26,12 @@ int proc_assign_cpu(int pid, int core){
         exit(1);
     }
     else {
-        long nprocessor = sysconf(_SC_NPROCESSORS_CONF);    // number of cores are online
-        printf("sched_getaffinity = ");
-        for (long i = 0; i < nprocessor; i++) {
-            printf("%d ", CPU_ISSET(i, &mask)); // Check if core i has been add to the cpuset
-        }
-        printf("\n");
+        //long nprocessor = sysconf(_SC_NPROCESSORS_CONF);    // number of cores are online
+        //printf("sched_getaffinity = ");
+        //for (long i = 0; i < nprocessor; i++) {
+        //    printf("%d ", CPU_ISSET(i, &mask)); // Check if core i has been add to the cpuset
+        //}
+        //printf("\n");
         return result;
     }
 }
