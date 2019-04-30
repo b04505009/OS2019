@@ -20,11 +20,6 @@ static int running;
 /* Number of finish Process */
 static int finish_cnt;
 
-/* Sort processes by ready time */
-int cmp(const void* a, const void* b) {
-    return ((struct process*)a)->t_ready - ((struct process*)b)->t_ready;
-}
-
 int cmp_proc_fcfs(const void* a, const void* b) {
     // sort ready time in increasing order
     if (((struct process*)a)->t_ready != ((struct process*)b)->t_ready)
@@ -34,8 +29,8 @@ int cmp_proc_fcfs(const void* a, const void* b) {
 }
 int cmp_proc_sjf(const void* a, const void* b) {
     // sort ready time in increasing order
-    if (((struct process*)a)->t_remain != ((struct process*)b)->t_remain)
-        return ((struct process*)a)->t_remain - ((struct process*)b)->t_remain;
+    if (((struct process*)a)->t_exec != ((struct process*)b)->t_exec)
+        return ((struct process*)a)->t_exec - ((struct process*)b)->t_exec;
     else
         return strcmp(((struct process*)a)->name, ((struct process*)b)->name);
 }
