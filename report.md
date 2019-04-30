@@ -1,4 +1,4 @@
-# 2019 OS Project 1 - Scheduling
+# OS Project 1 - Scheduling
 
 ## Design
 
@@ -73,7 +73,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 ![image-20190501040338661](res/image-20190501040338661.png)
 
-用十個process平均的結果，平均的單位時間為0.0019799022452毫秒
+用十個process平均的結果，平均的單位時間(UNIT TIME)為0.0019799022452秒
 
 - FIFO_5
 
@@ -124,32 +124,19 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 ## Comparison
 
 - FIFO_5
-  - ![image-20190501043407436](res/image-20190501043407436.png)
-  - P1 ready at time 0.
-    P2 ready at time 200.
-    P3 ready at time 200.
-    P4 ready at time 400.
-    P5 ready at time 400.
-    P6 ready at time 600.
-    P7 ready at time 600.
-    P1 finish at time 8000.
-    P2 finish at time 13000.
-    P3 finish at time 16000.
-    P4 finish at time 17000.
-    P5 finish at time 18000.
-    P6 finish at time 19000.
-    P7 finish at time 23000.
+
+  <img src="res/image-20190501043407436.png" width="300px"/>
 - PSJF_5
 
-  ![image-20190501043706718](res/image-20190501043706718.png)
+  <img src="res/image-20190501043706718.png" width="300px"/>
 
 - SJF_5
 
-  ![image-20190501043827340](res/image-20190501043827340.png)
+  <img src="res/image-20190501043827340.png" width="300px"/>
 
 - RR_5
 
-  ![image-20190501044110321](res/image-20190501044110321.png)
+  <img src="res/image-20190501044110321.png" width="300px"/>
 
 
 
