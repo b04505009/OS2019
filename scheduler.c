@@ -35,14 +35,24 @@ int next_process(struct process *proc, int nproc, int policy)
 
 	int ret = -1;
 
-	if (policy == PSJF || policy ==  SJF) {
-		for (int i = 0; i < nproc; i++) {
-			if (proc[i].pid == -1 || proc[i].t_exec == 0)
-				continue;
-			if (ret == -1 || proc[i].t_exec < proc[ret].t_exec)
-				ret = i;
-		}
-	}
+	if (policy == SJF) {
+        for (int i = 0; i < nproc; i++) {
+            if (proc[i].pid == -1 || proc[i].t_exec == 0)
+                continue;
+            if (ret == -1 || proc[i].t_exec < proc[ret].t_exec)
+                ret = i;
+        }
+    }
+
+    else if (policy == PSJF) {
+        qsort(proc, nproc, sizeof(struct process), cmp_proc_sjf);
+        for (int i = 0; i < nproc; i++) {
+            if (proc[i].pid == -1 || proc[i].t_exec == 0)
+                continue;
+            if (ret == -1 || proc[i].t_exec < proc[ret].t_exec)
+                ret = i;
+        }
+    }
 
 	else if (policy == FIFO) {
 		for(int i = 0; i < nproc; i++) {
