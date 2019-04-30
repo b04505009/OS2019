@@ -1,0 +1,19 @@
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+P3 312
+P2 32751
+P4 330
+P1 32750

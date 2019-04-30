@@ -1,0 +1,43 @@
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+P1 23692
+P2 23766
+P3 23770
+P4 23771
+P5 23778
+P6 23779
+P7 23783

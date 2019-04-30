@@ -1,0 +1,32 @@
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+P2 32436
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+P2 32436
+sched_getaffinity = 0 1 0 0 
+P1 32384
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+P2 32436
+sched_getaffinity = 0 1 0 0 
+P1 32384
+sched_getaffinity = 0 1 0 0 
+P4 32526
+sched_getaffinity = 1 0 0 0 
+sched_getaffinity = 0 1 0 0 
+sched_getaffinity = 0 1 0 0 
+P2 32436
+sched_getaffinity = 0 1 0 0 
+P1 32384
+sched_getaffinity = 0 1 0 0 
+P4 32526
+sched_getaffinity = 0 1 0 0 
+P5 32578
+P3 32469

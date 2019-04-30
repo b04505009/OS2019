@@ -9,8 +9,6 @@
 #include "process.h"
 
 
-#define PRINTK 315
-
 // Set process afinity to cpu
 int proc_assign_cpu(int pid, int core){
     if (core > (int)sysconf(_SC_NPROCESSORS_CONF)){
