@@ -40,10 +40,10 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 在整支程式中 我們主要用兩個CPU來完成: Parent, Child
 
 - Parent:
-  負責生成, 呼叫, 中斷 Child Process 以及 Log 開始與結束時間進
+  負責生成, 呼叫, 中斷 Child Process
 
 - Child:
-  負責執行程式本身 亦即用for loop執行 `UNIT_T()`
+  紀錄 Process 開始的時間以及結束的時間
 
 #### Time Log
 
@@ -127,6 +127,8 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
 ## Comparison
 
+### Theory pass time vs Actual pass time
+
 - FIFO_5
 
   | name | theory pass time | actual pass time |
@@ -144,8 +146,8 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
   | name | theory pass time | actual pass time |
   | ---- | ---------------- | ---------------- |
   | P1   | 100              | 98               |
-  | P2   | 4300             | 207              |
-  | P3   | 200              | 6579             |
+  | P3   | 200              | 207              |
+  | P2   | 4300             | 6579             |
   | P4   | 8200             | 12503            |
   | P5   | 15200            | 15593            |
 
@@ -162,15 +164,29 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 
   | name | theory pass time | actual pass time |
   | ---- | ---------------- | ---------------- |
-  | P1   | 23000            | 8767             |
-  | P2   | 18300            | 7309             |
-  | P3   | 12800            | 10634            |
-  | P4   | 5100             | 10807            |
-  | P5   | 7100             | 13937            |
-  | P6   | 8900             | 4793             |
-  | P7   | 20900            | 8126             |
+  | P4   | 5100             | 8767             |
+  | P5   | 7100             | 7309             |
+  | P6   | 8900             | 10634            |
+  | P3   | 12800            | 10807            |
+  | P2   | 18300            | 13937            |
+  | P7   | 20900            | 4793             |
+  | P1   | 23000            | 8126             |
 
+### Disscussion
 
+首先 在順序上 毫無疑問的 在理論跟實驗上其實是完全一致的
+
+但在花費時間上便可看出雖然大致趨勢還看得出來
+
+但也可以說兩者有顯著的差異了
+
+經討論後 我們推論造成這樣的差異有以下原因
+
+- 理論計算中未考慮context switch的損耗
+- 由於我們使用的是 `sched_other` 難以保證沒有其他process來共用同一顆CPU
+  因此受到的干擾較大 較難有準確的結果
+- 我們為了保持兩個CPU的synchronous 讓兩邊的load沒有很平衡
+  導致時間上受到的擾動又被加大
 
 
 
