@@ -185,8 +185,6 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 - 理論計算中未考慮context switch的損耗
 - 由於我們使用的是 `sched_other` 難以保證沒有其他process來共用同一顆CPU
   因此受到的干擾較大 較難有準確的結果
-- 我們為了保持兩個CPU的synchronous 讓兩邊的load沒有很平衡
-  導致時間上受到的擾動又被加大
 
 
 
