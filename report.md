@@ -185,6 +185,7 @@ Scheduler將會重複執行以上的cycle直到沒有其他Process需要被執�
 - 理論計算中未考慮context switch的損耗
 - 由於我們使用的是 `sched_other` 難以保證沒有其他process來共用同一顆CPU
   因此受到的干擾較大 較難有準確的結果
+- Parent跟Child是分開計算unit time，所以Parent呼叫block的時間跟Child自己計算的時間沒有同步
 
 
 
